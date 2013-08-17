@@ -1,5 +1,11 @@
 <form action="/content/add" method="post"> 
 
+Topic <br/>
+<input type="text" name="topic"><br/>
+
+Slug (must be unique within topic)<br/>
+<input type="text" name="slug"><br/>
+
 Page Title<br/>
 <input type="text" name="title"><br/>
 
@@ -7,6 +13,9 @@ Page Content<br/>
 <textarea cols="80" rows="20" name="content">Content in markdown format goes here</textarea><br/>
 
 <input type="submit" name="Add Contnet"><br/>
+
+Keywords (comma separated)<br/>
+<input type="text" name="keywords"><br/>
 
 	
 </form>

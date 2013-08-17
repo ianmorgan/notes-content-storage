@@ -4,6 +4,8 @@ require 'sinatra/base'
 require 'rack-flash'
 require 'erb'
 require 'aws-sdk'
+require 'json'
+require 'date'
 
 require 'yaml'
 require 'redcarpet'
@@ -32,22 +34,12 @@ class NotesStorageApp < Sinatra::Base
     erb :home
   end
 
-  get '/test3' do
-    cache_control :no_cache
-    
-    #{}"page 4"
-    redirect to('/about') 
-  end
-
   get '/content/add' do 
     erb :content_add
   end
 
   post '/content/add' do 
-    name = params[:title]
-    content = params[:content]
-    #add_content name, content
-    puts "content saved"
+    add_content params 
     flash[:notice] = "Content has been saved"
     redirect to('/')    
   end
