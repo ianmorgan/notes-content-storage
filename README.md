@@ -1,12 +1,13 @@
-notes-storage
-=============
+notes-content-storage
+=====================
 
-Storage and CMS style capabilities for the Notes web site
+Storage capabilities for the Notes web site. Currently uses 
+a Amazon S3 to store data and Elastic Search to index.
 
-Use the Sinatra framework.
+Built using the Sinatra framework.
 Tested with Ruby 1.9.3
 
 'bundle install' to update all dependencies 
 
-'rackup -p 4567' to run in dev mode
+'bin/dev.sh' to run in dev mode
 

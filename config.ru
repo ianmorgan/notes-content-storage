@@ -1,3 +1,3 @@
-# config.ru (run with rackup -p 4567)
+# config.ru (run with rackup -p 4402)
 require './sinatra'
 run NotesStorageApp
