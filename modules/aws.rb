@@ -1,6 +1,6 @@
 module AWSIntegration
 
-  aws_credentials = YAML::load( File.open( ENV['HOME'] + '/.notes-storage/aws/credentials.yaml' ) )
+  aws_credentials = YAML::load( File.open( ENV['HOME'] + '/.notes/dev/aws/credentials.yaml' ) )
 
   s3 = AWS::S3.new(
     :access_key_id => aws_credentials["access_key_id"],
