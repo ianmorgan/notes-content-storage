@@ -1,6 +1,5 @@
 module AWSIntegration
-
-  aws_credentials = YAML::load( File.open( ENV['HOME'] + '/.notes/dev/aws/credentials.yaml' ) )
+  aws_credentials = YAML::load( File.open( ENV['HOME'] + '/.notes/' + ENV['RACK_ENV'] + '/aws/credentials.yaml' ) )
 
   s3 = AWS::S3.new(
     :access_key_id => aws_credentials["access_key_id"],
@@ -20,7 +19,7 @@ module AWSIntegration
   @@buckets['scala'] = s3.buckets['notes-storage-scala'] 
   @@buckets['unix'] = s3.buckets['notes-storage-unix']
 
-  def add_content(content_hash)
+  def store_content_in_S3(content_hash)
     topic = content_hash[:topic]
     content = content_hash[:content]
     key = content_hash[:slug]  
